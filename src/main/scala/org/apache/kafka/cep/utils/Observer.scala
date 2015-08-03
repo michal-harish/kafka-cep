@@ -1,6 +1,5 @@
-package org.apache.kafka.cep
+package org.apache.kafka.cep.utils
 
-import scala.util.Random
 import java.text.SimpleDateFormat
 
 trait Observer {

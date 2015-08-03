@@ -1,19 +1,17 @@
-package org.apache.kafka.cep
+package org.apache.kafka.cep.framework
 
-import com.google.common.cache.CacheBuilder
-import org.apache.kafka.cep.ConcurrentSlidingWindow
-import scala.collection.mutable.MutableList
-import com.google.common.cache.Cache
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeUnit._
-import com.google.common.cache.RemovalNotification
-import com.google.common.cache.RemovalListener
+
+import com.google.common.cache.{Cache, CacheBuilder, RemovalListener, RemovalNotification}
+import org.apache.kafka.cep._
+import org.apache.kafka.cep.utils.{Observed, Observer}
+
 import scala.collection.JavaConverters._
 
 abstract class Detector(val timeFrame: Long, val unit: TimeUnit = SECONDS)(implicit system: CEP)
   extends Observed with Observer {
 
-  //every detector is registered implicitly this avoids handle case _ => underlyingDetector.handle
   system.register(this)
 
   val timeFrameMillis = unit.toMillis(timeFrame)

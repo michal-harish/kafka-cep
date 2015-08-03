@@ -1,6 +1,5 @@
-package org.apache.kafka.cep
+package org.apache.kafka.cep.framework
 
-import java.lang.Comparable
 import scala.collection.BitSet
 
 final class Event(val id: String, var timestamp: Long, val fixedSize: Int) extends Comparable[Event] {
@@ -50,16 +49,6 @@ final class Event(val id: String, var timestamp: Long, val fixedSize: Int) exten
    */
   override def compareTo(o: Event): Int = {
     ageInSeconds.intValue - o.ageInSeconds.intValue;
-  }
-
-  /**
-   * Cloning was used at some point but at the moment it is unused method
-   */
-  def clone(id: String): Event = {
-    val event = new Event(id, timestamp, fixedSize)
-    event.bitset = bitset
-    event.attributes = attributes
-    event
   }
 
 }

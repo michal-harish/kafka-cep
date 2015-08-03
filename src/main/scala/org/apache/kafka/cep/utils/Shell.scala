@@ -1,4 +1,4 @@
-package org.apache.kafka.cep.shell
+package org.apache.kafka.cep.utils
 
 import java.io.IOException
 
@@ -67,6 +67,27 @@ class Shell[T](context: T) extends Runnable {
   }
 
 }
+
+trait ShellCommand[T] {
+
+  def getShortHelp: String;
+
+  def printDetailedHelp = println(getShortHelp)
+
+  var shell: Shell[T] = null
+
+  var context: T = _
+
+  def registerContext(shellInstance: Shell[T], contextInstance: T) = {
+    this.shell = shellInstance
+    this.context = contextInstance
+  }
+
+  @throws(classOf[IOException])
+  def invoke(stdin: Source, args: String)
+
+}
+
 
 class Help[S] extends ShellCommand[S] {
   override def getShortHelp = "Show help"

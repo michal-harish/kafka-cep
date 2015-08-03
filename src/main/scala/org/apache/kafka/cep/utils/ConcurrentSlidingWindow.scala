@@ -1,7 +1,9 @@
-package org.apache.kafka.cep
+package org.apache.kafka.cep.utils
 
 import java.util.concurrent.atomic.AtomicLong
 import java.util.concurrent.{ConcurrentNavigableMap, ConcurrentSkipListMap, TimeUnit}
+
+import org.apache.kafka.cep.framework.Event
 
 trait Mergable[X] {
   def init: X
@@ -31,9 +33,6 @@ object Aggregate {
   implicit val DoublesCanBeAggregated = new Aggregate[Double] {
     def aggregate(args: ConcurrentNavigableMap[Long,Double]): Moments = aggregateDouble(args)
   }
-//  implicit val IntsCanBeAggregated = new Aggregate[Int] {
-//    def aggregate(args: ConcurrentNavigableMap[Long,Int]): Moments = aggregateInts(args)
-//  }
   def aggregateDouble(args: ConcurrentNavigableMap[Long,Double]): Moments = {
     {
       var n: Long = 0

@@ -3,7 +3,7 @@ package org.apache.kafka.cep.icinga
 import com.googlecode.jsendnsca.{Level, NagiosPassiveCheckSender}
 import com.googlecode.jsendnsca.builders.{MessagePayloadBuilder, NagiosSettingsBuilder}
 import com.googlecode.jsendnsca.encryption.Encryption
-import org.apache.kafka.cep.Config
+import org.apache.kafka.cep.utils.Config
 
 class IcingaPassiveCheck(config: Config) {
 

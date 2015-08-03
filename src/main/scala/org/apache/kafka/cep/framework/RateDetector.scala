@@ -1,9 +1,6 @@
-package org.apache.kafka.cep
+package org.apache.kafka.cep.framework
 
-import java.util.concurrent.TimeUnit
-import org.apache.kafka.cep.{Aggregate, Mergable, ConcurrentSlidingWindow}
-import java.util.concurrent.ConcurrentNavigableMap
-import Moments
+import org.apache.kafka.cep.utils.ConcurrentSlidingWindow
 
 trait RateDetector extends Detector {
 

@@ -1,8 +1,9 @@
-package org.apache.kafka.cep
-import scala.collection.JavaConverters._
+package org.apache.kafka.cep.framework
+
 import java.util.concurrent.TimeUnit
-import com.google.common.cache.CacheBuilder
-import com.google.common.cache.Cache
+
+import org.apache.kafka.cep.CEP
+import org.apache.kafka.cep.utils.Observed
 
 class Composite(timeFrame: Long, unit: TimeUnit, compositeDetectors: Seq[Detector])(implicit val system: CEP)
   extends Detector(timeFrame, unit) {

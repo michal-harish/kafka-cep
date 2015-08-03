@@ -1,6 +1,9 @@
-package org.apache.kafka.cep
+package org.apache.kafka.cep.framework
 
 import java.util.concurrent.TimeUnit
+
+import org.apache.kafka.cep.CEP
+import org.apache.kafka.cep.utils.Observed
 
 abstract class ChainDetector(timeFrame: Long, unit: TimeUnit) (implicit system:CEP)
 extends Detector(timeFrame, unit) {
