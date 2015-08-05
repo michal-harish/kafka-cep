@@ -1,8 +1,7 @@
-package org.apache.kafka.cep.framework
+package org.apache.kafka.cep
 
 import java.util.concurrent.TimeUnit
 
-import org.apache.kafka.cep.CEP
 import org.apache.kafka.cep.utils.Observed
 
 class ValueLogRatioDetector(timeFrameSec:Long, unit:TimeUnit, val d1: Detector, val d2: Detector, val threshold: Double)(implicit system: CEP)

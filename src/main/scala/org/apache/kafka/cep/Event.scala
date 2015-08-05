@@ -1,4 +1,4 @@
-package org.apache.kafka.cep.framework
+package org.apache.kafka.cep
 
 import scala.collection.BitSet
 

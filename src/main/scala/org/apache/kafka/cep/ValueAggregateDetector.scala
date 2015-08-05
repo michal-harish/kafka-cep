@@ -1,8 +1,7 @@
-package org.apache.kafka.cep.framework
+package org.apache.kafka.cep
 
 import java.util.concurrent.TimeUnit
 
-import org.apache.kafka.cep.CEP
 import org.apache.kafka.cep.utils.Observed
 
 class ValueAggregateDetector(sumDetectors: Detector*)(implicit system: CEP) extends Detector(0, TimeUnit.MINUTES) {

@@ -3,7 +3,7 @@ package org.apache.kafka.cep.utils
 import java.util.concurrent.atomic.AtomicLong
 import java.util.concurrent.{ConcurrentNavigableMap, ConcurrentSkipListMap, TimeUnit}
 
-import org.apache.kafka.cep.framework.Event
+import org.apache.kafka.cep.Event
 
 trait Mergable[X] {
   def init: X

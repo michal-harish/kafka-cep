@@ -1,10 +1,9 @@
-package org.apache.kafka.cep.framework
+package org.apache.kafka.cep
 
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeUnit._
 
 import com.google.common.cache.{Cache, CacheBuilder, RemovalListener, RemovalNotification}
-import org.apache.kafka.cep._
 import org.apache.kafka.cep.utils.{Observed, Observer}
 
 import scala.collection.JavaConverters._

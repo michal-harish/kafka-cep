@@ -1,6 +1,5 @@
-package org.apache.kafka.cep.framework
+package org.apache.kafka.cep
 
-import org.apache.kafka.cep.CEP
 import org.apache.kafka.cep.utils.Observed
 
 class ExpiredEventDetector(val underlyingDetector: Detector)(implicit system: CEP)

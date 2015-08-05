@@ -1,9 +1,8 @@
-package org.apache.kafka.cep.framework
+package org.apache.kafka.cep
 
 import java.util.concurrent.TimeUnit
 
 import org.apache.kafka.cep.utils.{ConcurrentSlidingWindow, Observed}
-import org.apache.kafka.cep.CEP
 
 class ValueStDevDetector(slidingWindow: Int, unit: TimeUnit, val threshold: Double, underlyingDetector: Detector)(implicit system:CEP)
   extends Detector(underlyingDetector.timeFrame, underlyingDetector.unit) {

@@ -1,23 +1,26 @@
 package org.apache.kafka.cep.utils
 
-import java.io.{File, FileInputStream}
+import java.io.{InputStream, File, FileInputStream}
 import java.util.Properties
 
 import scala.collection.JavaConverters._
 
-class Config(configFilePath: String) extends Properties {
+object Config {
+  def fromResource(resourcePath: String): Config = fromInputStream(getClass getResourceAsStream resourcePath)
 
-  val configFile = new File(configFilePath)
+  def fromFile(configFilePath: String): Config = fromInputStream(new FileInputStream(new File(configFilePath)))
 
-  load(getClass getResourceAsStream configFilePath)
-
-  if (configFile exists) {
-    putAll(new Properties() {
-      {
-        load(new FileInputStream(configFile))
-      }
+  def fromInputStream(is: InputStream): Config = {
+    val config = new Config
+    config.putAll(new Properties() {
+      load(is)
     })
+    config
   }
+}
+
+class Config extends Properties {
+
 
   val config = this.asScala
 

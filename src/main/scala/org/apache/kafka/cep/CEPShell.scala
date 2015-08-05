@@ -1,7 +1,8 @@
 package org.apache.kafka.cep
 
 import java.util.concurrent.atomic.AtomicInteger
-import org.apache.kafka.cep.utils.{Observed, Observer, ShellCommand, Shell}
+
+import org.apache.kafka.cep.utils.{Observed, Observer, Shell, ShellCommand}
 
 import scala.io.Source
 

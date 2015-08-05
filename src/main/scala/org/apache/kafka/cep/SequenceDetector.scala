@@ -1,9 +1,8 @@
-package org.apache.kafka.cep.framework
+package org.apache.kafka.cep
 
 import java.util.concurrent.TimeUnit
 
 import org.apache.kafka.cep.utils.{ConcurrentSlidingWindow, Observed}
-import org.apache.kafka.cep.CEP
 
 class SequenceDetector(timeFrame: Long, unit: TimeUnit, val limit: Int, val underlyingDetector: Detector)(implicit system: CEP)
   extends Detector(timeFrame, unit) {

@@ -1,4 +1,4 @@
-package org.apache.kafka.cep.framework
+package org.apache.kafka.cep
 
 import org.apache.kafka.cep.utils.ConcurrentSlidingWindow
 
